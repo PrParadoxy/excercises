@@ -66,15 +66,15 @@ def minus : nat → nat → nat := sorry
 
 def mul : nat → nat → nat := sorry
 
-theorem p0 : (mTrue ∧ mTrue) ∧ mTrue := sorry
+theorem true_and_true_and_true : (mTrue ∧ mTrue) ∧ mTrue := sorry
 
-theorem p1 (p : Prop) : p → mAnd p p := sorry
+theorem implies_and (p : Prop) : p → mAnd p p := sorry
 
-theorem p2 (p : Prop) : mNeg (mAnd p (mNeg p)) := sorry
+theorem contradiction (p : Prop) : mNeg (mAnd p (mNeg p)) := sorry
 
-theorem p3 (p q : Prop) : mOr (mNeg p) (mNeg q) → mNeg (mAnd p q) := sorry
+theorem or_implies_neg_and (p q : Prop) : mOr (mNeg p) (mNeg q) → mNeg (mAnd p q) := sorry
 
-theorem p4 (p : Prop) : p → mNeg (mNeg p) := sorry
+theorem imply_neg_neg (p : Prop) : p → mNeg (mNeg p) := sorry
 
 
 -- Now with the standard library:
