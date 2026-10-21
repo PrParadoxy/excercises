@@ -7,7 +7,18 @@ def predecessor' : nat → nat := fun n => match n with
   | .zero => .zero
   | .succ k => k
 
-open nat
+inductive metro : Type where
+  | rio : metro
+  | newyork : metro
+  | ehrenfeld : metro
+
+inductive metro_list : Type where
+  | nil : metro_list
+  | con : metro → metro_list → metro_list
+
+open nat metro metro_list
+
+def metro_list_count :  metro_list → nat := sorry
 
 def predecessor : nat → nat := fun n => match n with
   | zero => zero
